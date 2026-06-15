@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Winki 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #e8a0bf;
+      --rose-deep: #c77d9a;
+      --blush: #fce4ec;
+      --cream: #fff8f5;
+      --ink: #3d2c35;
+      --gold: #d4a574;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(160deg, var(--cream) 0%, var(--blush) 50%, #f5d0e0 100%);
+      min-height: 100vh;
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 1.2rem;
+      opacity: 0.15;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .envelope {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow:
+        0 4px 24px rgba(199, 125, 154, 0.15),
+        0 0 0 1px rgba(232, 160, 191, 0.3);
+      text-align: center;
+      animation: fadeUp 1s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .seal {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 16px rgba(199, 125, 154, 0.4);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--rose-deep);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .letter {
+      text-align: left;
+      line-height: 1.85;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .letter p {
+      margin-bottom: 1rem;
+    }
+
+    .letter p:last-child {
+      margin-bottom: 0;
+    }
+
+    .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--rose-deep);
+      margin-top: 1.5rem;
+    }
+
+    .btn-wrap {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    button {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.85rem 1.8rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .btn-yes {
+      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+      color: white;
+      box-shadow: 0 4px 16px rgba(199, 125, 154, 0.4);
+    }
+
+    .btn-yes:hover {
+      box-shadow: 0 6px 24px rgba(199, 125, 154, 0.5);
+    }
+
+    .btn-think {
+      background: white;
+      color: var(--rose-deep);
+      border: 2px solid var(--rose);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .response {
+      animation: fadeUp 0.6s ease-out;
+    }
+
+    .response h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--rose-deep);
+      margin-bottom: 1rem;
+    }
+
+    .response p {
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .sparkles {
+      font-size: 2rem;
+      margin: 1rem 0;
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: rgba(61, 44, 53, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="container">
+    <div class="envelope" id="main-card">
+      <div class="seal">💌</div>
+      <h1>Dear Winki</h1>
+      <p class="subtitle">A letter from my heart</p>
+
+      <div class="letter" id="letter">
+        <p>I've been wanting to tell you this for a while, and I finally found the courage to put it into words.</p>
+        <p>Every time I see you, my day gets a little brighter. Your smile, the way you laugh, the little things you do — they all stay with me long after we're apart.</p>
+        <p>I'm not sure if you feel the same way, but I wanted you to know: you mean more to me than I can easily say. You make me want to be a better person.</p>
+        <p>So here I am, being honest with you. No games, no pressure — just my truth.</p>
+      </div>
+
+      <p class="signature">— With all my heart</p>
+
+      <div class="btn-wrap" id="buttons">
+        <button class="btn-yes" onclick="showYes()">💕 Yes, I'd love to know you more</button>
+        <button class="btn-think" onclick="showThink()">🌸 Let me think about it</button>
+      </div>
+
+      <div class="response hidden" id="yes-response">
+        <div class="sparkles">✨ 💕 ✨</div>
+        <h2>You made my day!</h2>
+        <p>Thank you for being open to this. I promise to be patient, kind, and genuine with you.</p>
+        <p>Can't wait to see where this goes. 💗</p>
+      </div>
+
+      <div class="response hidden" id="think-response">
+        <h2>That's totally okay</h2>
+        <p>Take all the time you need. I'll be here whenever you're ready to talk — no rush, no pressure.</p>
+        <p>Thank you for reading this. It means a lot that you did. 🌷</p>
+      </div>
+    </div>
+
+    <footer>made with love · love.uhthu.dpdns.org</footer>
+  </div>
+
+  <script>
+    // Floating hearts background
+    const heartsContainer = document.getElementById('hearts');
+    const heartChars = ['♥', '💕', '💗', '🌸'];
+    for (let i = 0; i < 12; i++) {
+      const h = document.createElement('span');
+      h.className = 'heart';
+      h.textContent = heartChars[i % heartChars.length];
+      h.style.left = Math.random() * 100 + '%';
+      h.style.top = Math.random() * 100 + '%';
+      h.style.animationDelay = Math.random() * 5 + 's';
+      h.style.animationDuration = (6 + Math.random() * 4) + 's';
+      heartsContainer.appendChild(h);
+    }
+
+    function showYes() {
+      document.getElementById('letter').classList.add('hidden');
+      document.querySelector('.signature').classList.add('hidden');
+      document.getElementById('buttons').classList.add('hidden');
+      document.getElementById('yes-response').classList.remove('hidden');
+    }
+
+    function showThink() {
+      document.getElementById('letter').classList.add('hidden');
+      document.querySelector('.signature').classList.add('hidden');
+      document.getElementById('buttons').classList.add('hidden');
+      document.getElementById('think-response').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
